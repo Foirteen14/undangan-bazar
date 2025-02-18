@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Bazar HCC</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Fungsi untuk mendapatkan nama organisasi dari URL
+        function getOrganizationFromUrl() {
+            var path = window.location.pathname.split('/');
+            return path[path.length - 1]; // Ambil bagian terakhir dari URL
+        }
+
+        // Fungsi untuk menyesuaikan konten undangan
+        function customizeInvitation() {
+            var org = getOrganizationFromUrl();
+            var title = document.getElementById('org-title');
+            var description = document.getElementById('org-description');
+
+            // Menyesuaikan konten berdasarkan organisasi
+            if (org === "hero") {
+                title.textContent = "Undangan untuk HERO ITH";
+                description.textContent = "Dengan hormat, kami mengundang HERO ITH untuk hadir dalam acara Bazar HCC yang diselenggarakan oleh HCC (Himpunan Cinta Campuran).";
+            } else if (org === "forkim") {
+                title.textContent = "Undangan untuk FORKIM IAIN Parepare";
+                description.textContent = "Dengan hormat, kami mengundang FORKIM IAIN Parepare untuk hadir dalam acara Bazar HCC yang diselenggarakan oleh HCC (Himpunan Cinta Campuran).";
+            } else {
+                title.textContent = "Undangan Acara Bazar HCC";
+                description.textContent = "Dengan hormat, kami mengundang Anda untuk hadir dalam acara Bazar HCC yang diselenggarakan oleh HCC (Himpunan Cinta Campuran).";
+            }
+        }
+
+        window.onload = customizeInvitation; // Panggil fungsi saat halaman dimuat
+    </script>
+</head>
+<body>
+    <div class="invitation-container">
+        <header>
+            <h1 id="org-title">Undangan Acara Bazar HCC</h1>
+            <p id="org-description">Dengan hormat, kami mengundang Anda untuk hadir dalam acara Bazar HCC yang diselenggarakan oleh HCC (Himpunan Cinta Campuran).</p>
+        </header>
+
+        <section class="event-details">
+            <h2>Detail Acara:</h2>
+            <p><strong>Tanggal:</strong> [Masukkan Tanggal]</p>
+            <p><strong>Waktu:</strong> [Masukkan Waktu]</p>
+            <p><strong>Tempat:</strong> [Masukkan Lokasi]</p>
+        </section>
+
+        <footer>
+            <p>Untuk konfirmasi kehadiran, klik <a href="mailto:panitia@bazarhcc.com">di sini</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>
