@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Bazar HCC</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function getOrganizationFromUrl() {
+            var path = window.location.pathname.split('/');
+            return path[path.length - 1]; // Ambil nama organisasi dari URL
+        }
+
+        function customizeInvitation() {
+            var org = getOrganizationFromUrl();
+            var title = document.getElementById('org-title');
+            var description = document.getElementById('org-description');
+
+            // Daftar organisasi dan pesan khusus mereka
+            var organizations = {
+                "hero": "HERO ITH",
+                "forkim": "FORKIM IAIN Parepare",
+                "ukm-kwu-ias": "UKM KWU IAS",
+                "libam": "LIBAM IAIN Parepare",
+                "ksr-pmi": "KSR -PMI Unit 01 IAIN Parepare",
+                "ldm": "LDM IAIN Parepare",
+                "lpm-redline": "Lembaga Pers Mahasiswa (LPM) Red Line IAIN Parepare",
+                "racana": "Racana Makkiade' - Malebbi IAIN Parepare",
+                "animasi": "ANIMASI IAIN Parepare",
+                "resimen-mahasiswa": "Komandan Resimen Mahasiswa Sat.709 IAIN Parepare",
+                "formasi": "FORMASI Kota Parepare",
+                "hipmi-unm": "HIPMI Pare KOM.UNM",
+                "hipermawa": "HIPERMAWA Kota Parepare",
+                "bem-fb": "BEM FB IAS",
+                "ksr-pmi-unm": "KSR PMI Unit UNM Parepare",
+                "biseru": "Biseru 17",
+                "dewan-racana": "Dewan Racana Kiradeka Kampus V UNM",
+                "hmj-pgsd": "HMJ PGSD FIP UNM",
+                "hmps-ptik": "HMPS PTIK Kampus V UNM",
+                "masiddi": "MASIDDI Kota Parepare",
+                "ipmal": "PC. IPMAL Kota Parepare",
+                "ukm-seni": "UKM SENI PENADIPA IAS",
+                "fotografi-umpar": "FOTOGRAFI KAMPUS UMPAR",
+                "maperwa": "MAPERWA ITH",
+                "ukm-olahraga": "UKM OLAHRAGA ITH",
+                "porma": "PORMA IAIN PAREPARE",
+                "perkami": "PERKEMI DOJO IAIN PAREPARE",
+                "mispala": "MISPALA COSMOSENTRIS IAIN PAREPARE",
+                "sci": "SCI",
+                "appm-polman": "APPM POLMAN Kota Parepare",
+                "sc-mipa": "SC MIPA",
+                "hipmat": "HIPMAT Kota Parepare",
+                "gappembar": "Gappembar Komisariat Wilayah Parepare",
+                "ippm-pangkep": "IPPM PANGKEP Koor.Parepare",
+                "ldk-aljazira": "UKM KEROHANIAN LDK AL-JAZIRA ITH",
+                "ukm-mpm": "UKM MPM ITH",
+                "ukm-olahraga": "UKM OLARAGA ITH",
+                "hmps-tadris-matematika": "HMPS TADRIS MATEMATIKA"
+            };
+
+            if (organizations[org]) {
+                title.textContent = "Undangan untuk " + organizations[org];
+                description.textContent = "Dengan hormat, kami mengundang " + organizations[org] + " untuk hadir dalam acara Bazar HCC yang diselenggarakan oleh HCC.";
+            } else {
+                title.textContent = "Undangan Acara Bazar HCC";
+                description.textContent = "Dengan hormat, kami mengundang Anda untuk hadir dalam acara Bazar HCC yang diselenggarakan oleh HCC.";
+            }
+        }
+
+        window.onload = customizeInvitation; // Jalankan fungsi saat halaman dimuat
+    </script>
+</head>
+<body>
+    <div class="invitation-container">
+        <header>
+            <h1 id="org-title">Undangan Acara Bazar HCC</h1>
+            <p id="org-description">Dengan hormat, kami mengundang Anda untuk hadir dalam acara Bazar HCC yang diselenggarakan oleh HCC.</p>
+        </header>
+
+        <section class="event-details">
+            <h2>Detail Acara:</h2>
+            <p><strong>Tanggal:</strong> [Masukkan Tanggal]</p>
+            <p><strong>Waktu:</strong> [Masukkan Waktu]</p>
+            <p><strong>Tempat:</strong> [Masukkan Lokasi]</p>
+        </section>
+
+        <footer>
+            <p>Untuk konfirmasi kehadiran, klik <a href="mailto:panitia@bazarhcc.com">di sini</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>
